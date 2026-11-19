@@ -19,7 +19,7 @@ public class Leaderboard extends JPanel {
         this.players = new ArrayList<>();
 
         try {
-            bgImage = new ImageIcon(getClass().getResource("/img/Leaderboard_Background.jpg")).getImage();
+            bgImage = new ImageIcon(getClass().getResource("/img/Leaderboard_Background.png")).getImage();
         } catch (Exception e) {
             System.out.println("cannot load Background.png, use basic");
         }

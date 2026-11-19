@@ -31,7 +31,7 @@ public class GamePanel extends JPanel {
         this.words = words;
 
         try {
-            bgImage = new ImageIcon(getClass().getResource("/img/GamePanel_Background.jpg")).getImage();
+            bgImage = new ImageIcon(getClass().getResource("/img/GamePanel_Background.png")).getImage();
         } catch (Exception e) {
             System.out.println("cannot load Background.png, use basic");
         }
@@ -190,7 +190,7 @@ public class GamePanel extends JPanel {
         timerWrap.add(timerCard, timerGbc);
 
         // ---- right: word counter + difficulty ----
-        diffAndIndex = new JLabel("<html><center><b>คำที่ 1 / 20</b><br>ง่าย</center></html>", SwingConstants.CENTER);
+        diffAndIndex = new JLabel("<html><center><b>คำที่ 1 / 10</b></html>", SwingConstants.CENTER);
         diffAndIndex.setFont(new Font("Tahoma", Font.PLAIN, 16));
         diffAndIndex.setForeground(Color.WHITE);
         diffAndIndex.setBorder(BorderFactory.createEmptyBorder(12, 16, 12, 16));
@@ -290,15 +290,8 @@ public class GamePanel extends JPanel {
     private void updateWordDisplay() {
         setTargetWordText(words[currentIndex]);
 
-        String diff = "ง่าย";
-        if (currentIndex >= 5)
-            diff = "ปานกลาง";
-        if (currentIndex >= 10)
-            diff = "ยาก";
-        if (currentIndex >= 15)
-            diff = "ยากมาก";
 
-        diffAndIndex.setText("<html><center><b>คำที่ " + (currentIndex + 1) + " / 20</b><br>" + diff + "</center></html>");
+        diffAndIndex.setText("<html><center><b>คำที่ " + (currentIndex + 1) + " / 10</b><br>");
     }
 
     private void startTimer() {

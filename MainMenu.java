@@ -17,7 +17,7 @@ public class MainMenu extends JPanel {
         this.mainFrame = mainFrame;
 
         try {
-            bgImage = new ImageIcon(getClass().getResource("/img/MainMenu_Background.jpg")).getImage();
+            bgImage = new ImageIcon(getClass().getResource("/img/MainMenu_Background.png")).getImage();
         } catch (Exception e) {
             System.out.println("cannot load Background.png, use basic");
         }

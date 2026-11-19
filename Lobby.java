@@ -76,9 +76,21 @@ public class Lobby extends JPanel {
         listWrap.add(Box.createHorizontalGlue());
         add(listWrap, BorderLayout.CENTER);
 
-        // ---------- bottom: start button ----------
-        JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 0));
+        // ---------- bottom: back / start buttons ----------
+        JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 18, 0));
         bottomPanel.setOpaque(false);
+
+        MainMenu.RoundedButton backButton = new MainMenu.RoundedButton("กลับหน้าหลัก",
+                26,
+                new Color(0x74, 0xD5, 0xFF),
+                new Color(0x1B, 0x77, 0xD6),
+                new Color(0x1B, 0x3A, 0x55),
+                Color.WHITE,
+                new Color(0x0B, 0x2A, 0x45, 235));
+        backButton.setPreferredSize(new Dimension(215, 62));
+        backButton.addActionListener(e -> {
+            mainFrame.resetToMainMenu();
+        });
 
         MainMenu.RoundedButton startBtn = new MainMenu.RoundedButton("เริ่มเกม",
                 26,
@@ -87,11 +99,12 @@ public class Lobby extends JPanel {
                 new Color(0x2B, 0x3A, 0x4A),
                 new Color(0x2B, 0x1E, 0x05),
                 null);
-        startBtn.setPreferredSize(new Dimension(210, 62));
+        startBtn.setPreferredSize(new Dimension(215, 62));
         startBtn.addActionListener(e -> {
             mainFrame.getNetworkManager().sendMessage("START_GAME");
         });
 
+        bottomPanel.add(backButton);
         bottomPanel.add(startBtn);
         add(bottomPanel, BorderLayout.SOUTH);
 

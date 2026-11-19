@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.*;
 import java.net.*;
+import javax.swing.*;
 
 public class MainMenu extends JPanel {
     // ---- palette (sky / cartoon theme to match the background) ----
@@ -100,6 +100,8 @@ public class MainMenu extends JPanel {
             String ip = ipField.getText().trim();
 
             if (name.isEmpty() || ip.isEmpty()) {
+                UIManager.put("OptionPane.messageFont", new Font("Tahoma", Font.BOLD, 22));
+                UIManager.put("OptionPane.buttonFont", new Font("Tahoma", Font.BOLD, 22));
                 JOptionPane.showMessageDialog(this, "กรุณากรอกชื่อผู้เล่นและ IP เซิร์ฟเวอร์", "ข้อผิดพลาด",
                         JOptionPane.ERROR_MESSAGE);
                 return;
@@ -111,6 +113,8 @@ public class MainMenu extends JPanel {
                 mainFrame.setCurrentServerIp(ip);
                 mainFrame.switchScreen(new Lobby(mainFrame, ip));
             } else {
+                UIManager.put("OptionPane.messageFont", new Font("Tahoma", Font.BOLD, 22));
+                UIManager.put("OptionPane.buttonFont", new Font("Tahoma", Font.BOLD, 22));
                 JOptionPane.showMessageDialog(this,
                         "เชื่อมต่อเซิร์ฟเวอร์ไม่ได้",
                         "เชื่อมต่อผิดพลาด",
@@ -121,6 +125,8 @@ public class MainMenu extends JPanel {
         createButton.addActionListener(e -> {
             String name = nameField.getText().trim();
             if (name.isEmpty()) {
+                UIManager.put("OptionPane.messageFont", new Font("Tahoma", Font.BOLD, 22));
+                UIManager.put("OptionPane.buttonFont", new Font("Tahoma", Font.BOLD, 22));
                 JOptionPane.showMessageDialog(this, "กรุณากรอกชื่อผู้เล่น", "ข้อผิดพลาด",
                         JOptionPane.ERROR_MESSAGE);
                 return;

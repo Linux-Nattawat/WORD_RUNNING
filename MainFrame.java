@@ -9,7 +9,7 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
         setTitle("Word Running");
-        setSize(1000, 800);
+        setSize(1920, 1080);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         this.networkManager = new NetworkManager(this);
